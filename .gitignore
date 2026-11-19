@@ -3,3 +3,6 @@
 .DS_Store
 Thumbs.db
 _tmpcheck/
+
+# Local screenshots taken while working on the site
+screenshots/
