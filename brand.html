@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- The title and description are replaced with the brand name by brand.js -->
+  <title>Brands | Eaksaha Group</title>
+  <meta name="description" content="Car models, prices and test drives at Eaksaha Group showrooms.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Same design file as the homepage -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="brand-page">
+
+  <!-- ================= TOP MENU (same as homepage) ================= -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="logo"><img src="images/logos/eaksaha-logo.png" alt="Eaksaha Group · เอกสหกรุ๊ป" width="130" height="45"></a>
+
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links">
+        <a href="index.html#brands">Brands</a>
+        <a href="index.html#showrooms">Showrooms</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="test-drive.html" class="btn btn-primary btn-small" id="nav-test-drive">Book a Test Drive</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Everything inside <main> is built by brand.js from brands-data.js -->
+  <main id="brand-page">
+    <section class="section">
+      <div class="container">
+        <p class="section-intro">Loading… · กำลังโหลด…</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER (same as homepage) ================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="index.html" class="logo"><img src="images/logos/eaksaha-logo-white.png" alt="Eaksaha Group · เอกสหกรุ๊ป" width="130" height="45"></a>
+      <nav class="footer-links">
+        <a href="index.html#brands">Brands</a>
+        <a href="index.html#showrooms">Showrooms</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+              <a href="admin.html" class="staff-link">Staff · ทีมงาน</a>
+      </nav>
+      <nav class="footer-links footer-social">
+        <a href="https://www.facebook.com/eaksahagroupkorat/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://lin.ee/zeSHGfB" target="_blank" rel="noopener">LINE</a>
+        <a href="https://www.youtube.com/channel/UCWtve9Kzlh4gnlRhcgr6bMw" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.tiktok.com/@eaksahagroupesg" target="_blank" rel="noopener">TikTok</a>
+      </nav>
+      <p class="copyright">© <span id="year">2026</span> บริษัท เอกสหกรุ๊ป จำกัด · Eaksaha Group Co., Ltd.</p>
+    </div>
+  </footer>
+
+  <!-- ================= "BOOK A TEST DRIVE" BAR (always visible at the bottom) ================= -->
+  <div class="cta-bar" id="cta-bar" hidden>
+    <div class="container cta-bar-inner">
+      <p class="cta-bar-text">
+        <strong id="cta-bar-brand">Eaksaha</strong>
+        <span>Try it before you buy · ทดลองขับฟรี</span>
+      </p>
+      <div class="cta-bar-buttons">
+        <!-- Words inside class="hide-on-phone" are dropped on small screens so each button fits on one line -->
+        <a href="tel:044049888" class="btn btn-call btn-small" aria-label="Call us · โทรหาเรา"><span class="hide-on-phone">Call · </span>โทร</a>
+        <a href="test-drive.html" class="btn btn-primary btn-small" id="cta-test-drive"><span class="hide-on-phone">Book a </span>Test Drive · จองทดลองขับ</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order matters: the car data first, then the menu script, then the page builder -->
+  <script src="brands-data.js"></script>
+  <script src="brand-videos.js"></script>
+  <script src="script.js"></script>
+  <script src="brand.js"></script>
+  <!-- Thai / English switch -->
+  <script src="lang.js"></script>
+</body>
+</html>

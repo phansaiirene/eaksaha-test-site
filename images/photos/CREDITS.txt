@@ -1,0 +1,10 @@
+Photos from Unsplash (https://unsplash.com/license): free to use, including commercially. Credit is appreciated but not required.
+hero-ford-rangers.webp  https://unsplash.com/photos/I9XCOUUQBHg
+showroom.webp           https://unsplash.com/photos/RVEdgp-dkYY
+ev-charging.webp        https://unsplash.com/photos/WZz3bISfJa8
+car-window-view.webp    https://unsplash.com/photos/4SFuG90fdi0
+road-mountains.webp     https://unsplash.com/photos/hDEPW9-zzY0
+Replace any of these with your own showroom photos (same file name) whenever you have them.
+hero-mg-zs.webp         https://unsplash.com/photos/JpctB1gUmUE
+hero-nissan.webp        https://unsplash.com/photos/iw0D_9wHnf4
+hero-gwm-haval.webp     https://unsplash.com/photos/2xqFLkR0f4Y

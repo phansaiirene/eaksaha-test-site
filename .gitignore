@@ -1,0 +1,5 @@
+# local editor / tool settings
+.claude/
+.DS_Store
+Thumbs.db
+_tmpcheck/
