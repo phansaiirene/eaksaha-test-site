@@ -221,3 +221,54 @@ if (heroPhotos.length > 1 && !window.matchMedia("(prefers-reduced-motion: reduce
     heroPhotos[heroIndex].classList.add("is-active");
   }, 5000);
 }
+
+
+// =====================================================================
+// TIKTOK VIDEOS: play automatically (muted, looping) while on screen
+// Uses TikTok's player messages: the page tells each player to mute and play
+// when it scrolls into view, and to pause when it scrolls away.
+// Visitors can tap a video to turn the sound on.
+// =====================================================================
+const tiktokPlayers = document.querySelectorAll(".tiktok-frame iframe");
+
+if (tiktokPlayers.length) {
+  function tellPlayer(frame, type) {
+    if (frame.contentWindow) {
+      frame.contentWindow.postMessage({ "x-tiktok-player": true, type: type, value: null }, "*");
+    }
+  }
+
+  const visible = new Set();
+  const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // A player says it is ready → mute it, and play it if it is on screen
+  window.addEventListener("message", function (e) {
+    if (e.origin.indexOf("tiktok.com") === -1) return;
+    let data = e.data;
+    if (typeof data === "string") { try { data = JSON.parse(data); } catch (err) { return; } }
+    if (!data || data.type !== "onPlayerReady") return;
+    tiktokPlayers.forEach(function (frame) {
+      if (frame.contentWindow !== e.source) return;
+      tellPlayer(frame, "mute");
+      if (visible.has(frame) && !calm) tellPlayer(frame, "play");
+    });
+  });
+
+  // Play when scrolled into view, pause when scrolled away
+  if ("IntersectionObserver" in window) {
+    const watcher = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        const frame = entry.target;
+        if (entry.isIntersecting) {
+          visible.add(frame);
+          tellPlayer(frame, "mute");
+          if (!calm) tellPlayer(frame, "play");
+        } else {
+          visible.delete(frame);
+          tellPlayer(frame, "pause");
+        }
+      });
+    }, { threshold: 0.5 });
+    tiktokPlayers.forEach(function (frame) { watcher.observe(frame); });
+  }
+}
